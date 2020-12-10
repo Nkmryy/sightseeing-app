@@ -1,0 +1,64 @@
+
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+/* リセットCSS */
+/* _header */
+header {
+  background-color: violet;
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-left {
+  background-color: lightgreen;
+  padding: 5px 15px;
+  margin-left: 20px;
+}
+.header-right {
+  background-color: lightpink;
+  display: flex;
+  margin-right: 20px;
+}
+.header-li {
+  display: block;
+  padding: 3px;
+  margin: 7px;
+}
+/* _header */
+
+/* _hooter */
+.hooter {
+  background-color: lightblue;
+  width: 100vw;
+  height: 50px;
+
+}
+/* _hooter */
+
+/* index-main */
+.main {
+  background-color: lightgoldenrodyellow;
+  height: calc(100vh - 120px);
+}
+
+/* index-main */
+
+
+
+
+
