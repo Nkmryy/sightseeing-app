@@ -32,7 +32,7 @@ has_many :trips
 | evaluation_id | integer    | null: false       |評価
 | impressions   | text       | null:false        |感想
 | user          | references | foreign_key: true |
-| trip          | references | foreign_key: true |
+| place         | references | foreign_key: true |
 ### Association
 - belongs_to :user
 - belongs_to :place

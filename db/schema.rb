@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_055935) do
+ActiveRecord::Schema.define(version: 2020_12_11_034947) do
 
   create_table "places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "country_id", null: false
@@ -18,6 +18,19 @@ ActiveRecord::Schema.define(version: 2020_12_10_055935) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "attraction_id", null: false
+    t.integer "evaluation_id", null: false
+    t.string "title", null: false
+    t.text "impressions", null: false
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_trips_on_place_id"
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,4 +46,6 @@ ActiveRecord::Schema.define(version: 2020_12_10_055935) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "trips", "places"
+  add_foreign_key "trips", "users"
 end
