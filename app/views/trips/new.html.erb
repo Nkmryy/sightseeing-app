@@ -1,0 +1,28 @@
+<h1>new</h1>
+<%= form_with model: @trip, class: 'form', local: true do |f| %>
+  <div class="form-input">
+      <%# ActiveHash %>
+      <div class="form">
+        <div class="weight-bold-text">
+          アトラクション
+          <span class="indispensable">必須</span>
+        </div>
+        <%#= f.collection_select(:attraction_id, Attraction.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          評価
+          <span class="indispensable">必須</span>
+        </div>
+        <%#= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+      </div>
+      <%# ActiveHash %>
+    <div>
+      <%= f.text_field :tytle, class: 'form-tytle', placeholder: 'type a message' %>
+      <%= f.text_field :impressions, class: 'form-impressions', placeholder: 'type a message' %>
+    </div>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: "form-submit" %>
+<% end %>

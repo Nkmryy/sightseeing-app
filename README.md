@@ -28,8 +28,8 @@ has_many :trips
 | Column        | Type       | Options           |   
 | ------------- | ---------- | ----------------- |
 | attraction_id | integer    | null: false       |アトラクション
-| title         | string     | null: false       |タイトル
 | evaluation_id | integer    | null: false       |評価
+| title         | string     | null: false       |タイトル
 | impressions   | text       | null:false        |感想
 | user          | references | foreign_key: true |
 | place         | references | foreign_key: true |
