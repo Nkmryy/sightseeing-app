@@ -7,9 +7,9 @@ class Attraction < ActiveHash::Base
     { id: 4, name: 'スポーツ' },
     { id: 5, name: 'アミューズメント' },
     { id: 6, name: '買い物' },
-    { id: 7, name: '芸術' },
-    { id: 8, name: '建築物' },
-    { id: 9, name: '' },
+    { id: 7, name: 'お祭り' },
+    { id: 8, name: '芸術' },
+    { id: 9, name: '建築物' },
     { id: 10, name: 'その他' }
   ]
 

@@ -1,28 +1,40 @@
-<h1>new</h1>
-<%= form_with model: @trip, class: 'form', local: true do |f| %>
-  <div class="form-input">
-      <%# ActiveHash %>
-      <div class="form">
+<%= render "shared/header" %>
+<div class=trip-new-main>
+<h1 class='pop'>旅を投稿しよう！</h1>
+  <%= form_with model: @trip, class: 'form', local: true do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form-input">
+
+      <div class="form-choice">
         <div class="weight-bold-text">
           アトラクション
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.collection_select(:attraction_id, Attraction.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:attraction_id, Attraction.all, :id, :name, {}, {class:"select-box", id:"trip-attraction"}) %>
         <div class="weight-bold-text">
           評価
           <span class="indispensable">必須</span>
         </div>
-        <%#= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+        <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"select-box", id:"trip-evaluation"}) %>
       </div>
-      <%# ActiveHash %>
-    <div>
-      <%= f.text_field :tytle, class: 'form-tytle', placeholder: 'type a message' %>
-      <%= f.text_field :impressions, class: 'form-impressions', placeholder: 'type a message' %>
+
+      <div class='form-input'>
+        <div>
+          <p>タイトル</p>
+          <%= f.text_field :title, class: 'form-tytle', placeholder: 'title' %>
+        </div>
+        <div>
+          <p>詳細</p>
+          <%= f.text_area :impressions, rows: "10", class: 'form-impressions', placeholder: 'type a impressions' %>
+        </div>
+      </div>
+      <label class="form-photos">
+        <span class="photos-file">画像</span>
+        <%= f.file_field :photos, multiple: true, class: 'travel-photo' %>
+      </label>
     </div>
-    <label class="form-image">
-      <span class="image-file">画像</span>
-      <%= f.file_field :image, class: 'hidden' %>
-    </label>
-  </div>
-  <%= f.submit '送信', class: "form-submit" %>
-<% end %>
+    <%= f.submit '送信', class: "form-submit" %>
+  <% end %>
+</div>
