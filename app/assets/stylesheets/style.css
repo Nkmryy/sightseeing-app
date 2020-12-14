@@ -57,7 +57,21 @@ header {
 }
 
 /* index-main */
-
+/* new-main */
+.pop {
+  
+}
+.form {
+  position: relative;
+  text-align: center;
+}
+.form-input {
+  background-color: palegoldenrod;
+  margin: auto;
+  width: 90vw;
+  text-align: center;
+}
+/* new-main */
 
 
 
