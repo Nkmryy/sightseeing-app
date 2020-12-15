@@ -22,9 +22,18 @@ class TripsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if current_user.id != @trip.user_id
   end
 
   def update
+    if current_user.id == @trip.user_id
+      @trip.update(trip_params)
+      if @trip.valid?
+        redirect_to trip_path
+      else
+        render :edit
+      end
+    end
   end
 
   def destroy
