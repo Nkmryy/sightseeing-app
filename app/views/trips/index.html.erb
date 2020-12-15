@@ -14,10 +14,20 @@
       <%= link_to '体験を投稿', new_trip_path %>
     </div>
     <p>trip一覧</p>
-    <ul>
-      <li></li>
-      <li></li>
-    </ul>
+    <% @trips.each do |trip| %>
+      <div class='trip-info'>
+        <h2>都道府県 <%#=  %><%= trip.title %></h2>
+        <h3 class='trip-name'>
+          <%= trip.attraction.name %>
+          <%= trip.evaluation.name%>
+        </h3>
+        <%#= link_to trip_path(trip.id)do%>
+          <div class='trip-photo-content'>
+            <%= image_tag trip.photos[0].variant(resize: '500x500') %>
+          </div>
+        <%# end %>
+      </div>
+    <% end %>
   </div>
 </div>
 <%= render "shared/hooter"%>

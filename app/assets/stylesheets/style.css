@@ -53,7 +53,9 @@ header {
 /* index-main */
 .main {
   background-color: lightgoldenrodyellow;
-  height: calc(100vh - 120px);
+}
+.trip-info {
+  background-color: lightpink;
 }
 
 /* index-main */
