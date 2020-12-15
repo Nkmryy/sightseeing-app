@@ -16,16 +16,20 @@
     <p>trip一覧</p>
     <% @trips.each do |trip| %>
       <div class='trip-info'>
-        <h2>都道府県 <%#=  %><%= trip.title %></h2>
-        <h3 class='trip-name'>
-          <%= trip.attraction.name %>
-          <%= trip.evaluation.name%>
-        </h3>
-        <%= link_to trip_path(trip.id) do %>
-          <div class='trip-photo-content'>
-            <%= image_tag trip.photos[0].variant(resize: '500x500') %>
-          </div>
-        <% end %>
+        <div class='trip-photo'>
+          <%= link_to trip_path(trip.id) do %>
+            <div class='trip-photo-content'>
+              <%= image_tag trip.photos[0].variant(resize: '500x500') %>
+            </div>
+          <% end %>
+        </div>
+        <div class='trip-'>
+          <h2>都道府県 <%#=  %><%= trip.title %></h2>
+          <h3 class='trip-name'>
+            <%= trip.attraction.name %>
+            <%= trip.evaluation.name%>
+          </h3>
+        </div>
       </div>
     <% end %>
   </div>
