@@ -42,7 +42,7 @@ has_many :trips
 ## commentsテーブル
 | Column  | Type       | Options           |
 | ------- | ---------- | ----------------- |
-| comment | string     | null: false       |
+| comment | text       | null: false       |
 | user    | references | foreign_key: true |
 | trip    | references | foreign_key: true |
 ### Association

@@ -1,6 +1,7 @@
 class Trip < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
+  has_many :comments
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :attraction
