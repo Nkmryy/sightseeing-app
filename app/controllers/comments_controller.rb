@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
+    comment = Comment.create(comment_params)
+    redirect_to trip_path(comment.trip_id)
   end
 
   private
