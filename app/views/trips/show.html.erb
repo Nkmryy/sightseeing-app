@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+<%= @trip.title %>
+<div>
+  <%= @trip.attraction.name %>
+  <%= @trip.evaluation.name %>
+</div>
+<%= @trip.impressions %>
+<%= @trip.user.nickname %>
+
+<% @trip.photos.each do |photo| %>
+  <div><%=image_tag photo.variant(resize: '500x500') %></div>
+<%end%>
+<div>
+  <%= link_to '編集', edit_trip_path(@trip.id) %>
+  <%= link_to '削除', trip_path(@trip.id), method: :delete %>
+</div>

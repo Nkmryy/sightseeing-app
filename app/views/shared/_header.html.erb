@@ -1,5 +1,7 @@
 <header class='page-header'>
-  <h1 class='header-left'>TRIP</h1>
+  <h1 class='header-left'>
+    <%= link_to 'TRIP', root_path %>
+  </h1>
   <ul class='header-right'>
     <% if user_signed_in? %>
       <li class='header-li'><%= link_to current_user.nickname, root_path, class: "user-nickname" %></li>

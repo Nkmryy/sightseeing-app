@@ -55,14 +55,13 @@ header {
   background-color: lightgoldenrodyellow;
 }
 .trip-info {
-  background-color: lightpink;
+  background-color: darksalmon;
+  display: flex;
+  justify-content:space-evenly
 }
 
 /* index-main */
 /* new-main */
-.pop {
-  
-}
 .form {
   position: relative;
   text-align: center;
