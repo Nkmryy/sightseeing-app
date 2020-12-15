@@ -21,11 +21,11 @@
           <%= trip.attraction.name %>
           <%= trip.evaluation.name%>
         </h3>
-        <%#= link_to trip_path(trip.id)do%>
+        <%= link_to trip_path(trip.id) do %>
           <div class='trip-photo-content'>
             <%= image_tag trip.photos[0].variant(resize: '500x500') %>
           </div>
-        <%# end %>
+        <% end %>
       </div>
     <% end %>
   </div>

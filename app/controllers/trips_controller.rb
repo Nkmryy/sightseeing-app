@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :derete]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy]
   def index
     @trips = Trip.includes(:user).order(created_at: 'DESC')
   end
@@ -16,9 +18,25 @@ class TripsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def trip_params
     params.require(:trip).permit(:attraction_id, :evaluation_id, :title, :impressions, photos: []).merge(user_id: current_user.id)
+  end
+
+  def set_trip
+    @trip = Trip.find(params[:id])
   end
 end
