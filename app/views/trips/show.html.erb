@@ -10,7 +10,14 @@
 <% @trip.photos.each do |photo| %>
   <div><%=image_tag photo.variant(resize: '500x500') %></div>
 <%end%>
-<div>
-  <%= link_to '編集', edit_trip_path(@trip.id) %>
-  <%= link_to '削除', trip_path(@trip.id), method: :delete %>
-</div>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @trip.user_id %>
+    <div>
+      <%= link_to '編集', edit_trip_path(@trip.id) %>
+      <%= link_to '削除', trip_path(@trip.id), method: :delete %>
+    </div>
+  <%end%>
+<%end%>
+
+
