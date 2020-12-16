@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_063058) do
+ActiveRecord::Schema.define(version: 2020_12_16_062151) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_12_15_063058) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "trip_places", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "place_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_trip_places_on_place_id"
+    t.index ["trip_id"], name: "index_trip_places_on_trip_id"
+  end
+
   create_table "trips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "attraction_id", null: false
     t.integer "evaluation_id", null: false
@@ -76,6 +85,8 @@ ActiveRecord::Schema.define(version: 2020_12_15_063058) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "trip_places", "places"
+  add_foreign_key "trip_places", "trips"
   add_foreign_key "trips", "places"
   add_foreign_key "trips", "users"
 end

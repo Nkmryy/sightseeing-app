@@ -1,6 +1,7 @@
 class Trip < ApplicationRecord
   belongs_to :user
-  has_many :places, through: :trips_places
+  has_many :trip_places
+  has_many :places, through: :trip_places
   has_many_attached :photos, dependent: :destroy
   has_many :comments, dependent: :destroy
 
