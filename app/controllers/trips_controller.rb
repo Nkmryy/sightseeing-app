@@ -11,7 +11,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    if @trip.save
+    if @trip.valid?
+      @trip.save
       redirect_to root_path
     else
       render :new
@@ -29,8 +30,8 @@ class TripsController < ApplicationController
 
   def update
     if current_user.id == @trip.user_id
-      @trip.update(trip_params)
       if @trip.valid?
+        @trip.update(trip_params)
         redirect_to trip_path
       else
         render :edit

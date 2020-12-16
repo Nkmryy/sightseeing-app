@@ -50,10 +50,11 @@ has_many :trips
 - belongs_to :trip
 
 
-## テーブル
-| Column   | Type  | Options     |
-| -------- | ----- | ----------- |
-| comment  | text  | null: false |
+## trips_placesテーブル
+| Column   | Type        | Options           |
+| -------- | ----------- | ----------------- |
+| trip     | references  | foreign_key: true |
+| place    | references  | foreign_key: true |
 ### Association
-- belongs_to :user
+- belongs_to :place
 - belongs_to :trip
