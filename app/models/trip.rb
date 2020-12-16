@@ -1,7 +1,7 @@
 class Trip < ApplicationRecord
   belongs_to :user
-  has_many_attached :photos
-  has_many :comments
+  has_many_attached :photos, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :attraction
@@ -13,5 +13,20 @@ class Trip < ApplicationRecord
     validates :photos
     validates :attraction_id, numericality: { other_than: 0, message: "can't be blank" }
     validates :evaluation_id
+  end
+
+  validate :validates_photos
+
+  private
+
+  def validates_photos
+    photos.each do |photo|
+      if !photo.blob.content_type.in?(%('image/jpeg image/png'))
+        errors.add(:avatar, 'ファイルが対応している画像データではありません')
+      end
+    end
+    if photos.length > 4
+      errors.add(:photos, "は4枚以内にしてください")
+    end
   end
 end
