@@ -25,7 +25,7 @@ header {
   justify-content: space-between;
 }
 .header-left {
-  background-color: lightgreen;
+  background-color:thistle;
   padding: 5px 15px;
   margin-left: 20px;
 }
@@ -43,7 +43,7 @@ header {
 
 /* _hooter */
 .hooter {
-  background-color: lightblue;
+  background-color: violet;
   width: 100vw;
   height: 50px;
 
@@ -61,6 +61,25 @@ header {
 }
 
 /* index-main */
+/* show-main */
+.trip-show-info{
+  height: calc(100vh - 120px);
+  overflow: scroll;
+}
+.trip-show {
+  background-color: thistle;
+  margin: 0 20px;
+  height: calc(100vh - 120px);
+}
+.show-photos {
+  display: flex;
+  overflow: scroll;
+}
+.show-photo {
+  margin-right: 5px;
+}
+
+/* show-main */
 /* new-main */
 .form {
   position: relative;

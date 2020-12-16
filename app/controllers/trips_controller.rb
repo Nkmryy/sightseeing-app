@@ -19,6 +19,8 @@ class TripsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @trip.comments.includes(:user)
   end
 
   def edit
