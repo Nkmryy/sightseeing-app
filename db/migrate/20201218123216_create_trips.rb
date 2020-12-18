@@ -6,7 +6,6 @@ class CreateTrips < ActiveRecord::Migration[6.0]
       t.string :title,          null: false
       t.text :impressions,      null: false
       t.references :user,       foreign_key: true
-      t.references :place,      foreign_key: true
       t.timestamps
     end
   end
