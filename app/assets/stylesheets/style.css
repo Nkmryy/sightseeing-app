@@ -93,6 +93,8 @@ header {
 }
 /* new-main */
 
-
+.display-none {
+  visibility: hidden;
+}
 
 

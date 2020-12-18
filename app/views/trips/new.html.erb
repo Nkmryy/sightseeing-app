@@ -7,6 +7,14 @@
 
     <div class="form-input">
 
+      <div class="countries display-none">国を選択
+        <%= f.select :country, CS.countries.values, selected: "Japan" %>
+      </div>
+      <div>地域を選択
+        <%= f.select :state, CS.states(:jp).values %>
+      </div>
+
+
       <div class="form-choice">
         <div class="weight-bold-text">
           アトラクション

@@ -17,8 +17,6 @@
 | ---------  | ---------- | ----------------- |
 | country_id | integer    | null: false       |
 | state_id   | integer    | null: false       |
-| address    | string     |                   |
-| trip       | references | foreign_key: true |
 ### Association
 has_many :users
 has_many :trips

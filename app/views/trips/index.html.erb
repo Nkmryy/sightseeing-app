@@ -24,9 +24,14 @@
           <% end %>
         </div>
         <div class='trip-'>
-          <h2>都道府県 <%#=  %><%= trip.title %></h2>
+          <h2>都道府県 <%#=  %></h2>
+          <h2><%= trip.title %></h2>
           <h3 class='trip-name'>
+            
             <%= trip.attraction.name %>
+          </h3>
+          <h3 class='trip-name'>
+            評価
             <%= trip.evaluation.name%>
           </h3>
         </div>
